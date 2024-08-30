@@ -1,0 +1,251 @@
+body {
+    font-family: system-ui;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f2f5;
+}
+
+.card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 600px;
+    padding: 20px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.menu-item {
+    color: #65676b;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.menu-item.active {
+    color: #ff4500;
+}
+
+.content {
+    padding: 10px;
+}
+
+.cat-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+.action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.cat-info {
+    padding: 0px;
+    margin: 0px;
+}
+
+.cat-info p {
+    text-align: center;
+}
+
+.select-container {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.select-container::after {
+    content: '×';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    appearance: none;
+    background-color: white;
+}
+
+.cats-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.cats-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    aspect-ratio: 1 / 1; 
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+#sliderImagesContainer {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: none;
+}
+
+.slider-image.active {
+    display: block;
+}
+
+.nav-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: rgba(187, 187, 187, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: rgba(113, 113, 113, 0.9);
+}
+
+.breed-info {
+    padding: 0px 10px;
+    margin-top: 20px;
+}
+
+.breed-info span {
+    margin-right: 5px;
+}
+
+.breed-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.breed-origin {
+    color: #65676b;
+    font-size: 14px;
+}
+
+.id-italic {
+    font-style: italic;
+}
+
+.wikipedia {
+    color: #ff4500;
+    font-size: 15px;
+    margin-top: 5px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.view-toggle-item.active {
+    color: #ff4500;
+}
+
+.single-image-scroll {
+    display: block;
+    overflow-y: auto;
+    height: 500px;
+}
+
+.single-image-scroll img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    height: 500px;
+    overflow-y: auto;
+}
+
+.favorites-grid img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.view-toggle {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.view-toggle button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+#voting-content, #breeds-content, #favs-content {
+    display: none;
+}
+
+
+.vote-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.vote-buttons button {
+    font-size: 24px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
