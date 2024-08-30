@@ -1,31 +1,43 @@
 # Beego Cat API 
 
-This project is a simple API built using the Beego framework in Go. The API provides functionalities to interact with the [The Cat API](https://thecatapi.com/), including fetching random cat images, voting on cats, managing favorites and viewing cats by breeds.
+A web application that allows users to explore different cat breeds, view images, and vote on their favorite cats. This project is built using the Beego web framework for the backend and vanilla JavaScript for the frontend. In this project, a simple API has been built using the Beego framework in Go. The API provides functionalities to interact with the [The Cat API](https://thecatapi.com/), including fetching random cat images, voting on cats, managing favorites and viewing cats by breeds.
 
-## Project Structure
+## Features
 
-  ```plaintext
-    beego_project/
-    ├── conf/
-    │   └── app.conf           # Configuration file for the application
-    ├── controllers/
-    │   └── cat_controller.go  # Controller logic (e.g., handling HTTP requests)
-    ├── main.go                # Main application entry point
-    ├── routers/
-    │   └── router.go          # Routes definition and setup
-    ├── static/
-    │   ├── css/               # CSS files
-    │   └── js/                # JavaScript files
-    ├── tests/
-    │   └── default_test.go    # Test files
-    └── views/
-        └── index.tpl          # HTML template files for views
-  ```
+- Fetches random cats
+- Browse a list of cat breeds
+- View detailed information about each breed
+- See images of cats from selected breeds
+- Vote (like/dislike) or add favorite feature on cat images
+- Simple and intuitive user interface
 
 ## Prerequisites
 
 - Go 1.16+
-- Beego Framework v2.x
+- Beego Framework v2
+- An API key from The Cat API
+  
+## Project Structure
+
+  ```plaintext
+   go/
+    └── src/
+         └── cat_api/
+              ├── conf/
+              │   └── app.conf           # Configuration file for the application
+              ├── controllers/
+              │   └── cat_controller.go  # Controller logic (e.g., handling HTTP requests)
+              ├── main.go                # Main application entry point
+              ├── routers/
+              │   └── router.go          # Routes definition and setup
+              ├── static/
+              │   ├── css/               # CSS files
+              │   └── js/                # JavaScript files
+              ├── tests/
+              │   └── default_test.go    # Test files
+              └── views/
+                  └── index.tpl          # HTML template files for views
+  ```
   
 ## Installation
 
@@ -36,7 +48,7 @@ This project is a simple API built using the Beego framework in Go. The API prov
    cd cat_api
    ```
 
-2. **Install Beego and other dependencies**
+2. **Install Beego v2 and Bee v2 tool**
  
    Check go version
 
@@ -57,13 +69,13 @@ This project is a simple API built using the Beego framework in Go. The API prov
    bee version
    ```
 
-   Now, run the following command:
-   
+3. **Install dependencies**
+
    ```bash
    go mod tidy
    ```
 
-3. **Set Up The Cat API Key**
+4. **Set Up The Cat API Key**
 
     1. Get your API key from [The Cat API](https://thecatapi.com/#pricing).
     2. Add your API key to the conf/app.conf file:
@@ -72,14 +84,14 @@ This project is a simple API built using the Beego framework in Go. The API prov
         cat_api_key = your_actual_api_key_from_thecatapi.com
         ```
 
-4. **Configurations**
+5. **Configurations**
 
     The application settings are managed in the conf/app.conf file.  Rename the app.conf.sample file to app.conf and then add you the Cat API key. You can configure the following:
 
     - httpport: The port on which the application will run (default is 8080).
     - cat_api_key: Your API key for The Cat API.
 
-5. **Run the Project**
+6. **Run the Project**
 
     To start the Beego application, run:
 
@@ -93,12 +105,20 @@ This project is a simple API built using the Beego framework in Go. The API prov
 
 Here are some of the API endpoints available in this project:
 
-- GET /api/cat: Fetches a random cat image.
-- POST /api/vote: Votes on a cat image.
+- GET /api/cat: Fetches a random cat image. Each contains the url for the image file, along with its width, height and breed information (if available).
+- POST /api/vote: Submit a vote for a cat image.
 - POST /api/favorite: Adds a cat image to favorites.
 - GET /api/favorites: Retrieves the list of favorite cat images.
-- GET /api/breeds: 
-- GET /api/breed/:id:
+- GET /api/breeds: Fetch list of cat breeds.
+- GET /api/breed/:id: Fetch information about a specific breed.
+
+## Usage
+
+- Upon loading, the application will display a cat image with its breed on `Voting`.
+- Use the thumbs up/down buttons to vote on the current cat image.
+- Use the Heart button to add the current cat image to the favorites list that can be seen in the `Favs` Section.
+- In the `Breeds` section, the application will display information about the first cat breed in the list.
+- Use the dropdown menu to select different cat breeds.
 
 ## Static Files
 
